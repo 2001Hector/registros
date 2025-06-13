@@ -1,0 +1,300 @@
+/* ==== ESTILO GENERAL DE LA PÁGINA ==== */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../imagenes/Imagen1.jpg');
+    background-size: cover;
+    background-position: relative; 
+    background-repeat: no-repeat; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.contenedor-formulario {
+    position: absolute;
+    top: 28%; /* o el valor que prefieras */
+    left: 30%;
+    transform: translate(-50%, -30%);
+    image-rendering:  center;
+    width: 95%;            /* Aumenta el ancho en pantallas grandes */
+    max-width: 450px;      /* Puedes subirlo de 350px a 450px o más */
+    
+    padding: 30px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    /* Fondo borroso */
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+
+
+/* Animación de aparición suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -30%);
+    }
+}
+
+/* Inputs con animación por fila */
+form div:nth-child(1) {
+    animation: slideInLeft 0.5s ease-out forwards;
+}
+form div:nth-child(2) {
+    animation: slideInRight 0.6s ease-out forwards;
+}
+form div:nth-child(3) {
+    animation: slideInLeft 0.7s ease-out forwards;
+}
+
+/* Animaciones laterales */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* En pantallas más pequeñas reducimos max-width y ancho para que se ajuste */
+@media (max-width: 768px) {
+    .contenedor-formulario {
+        max-width: 300px;
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-formulario {
+        max-width: 250px;
+        width: 95%;
+    }
+}
+
+
+
+/* ==== ENCABEZADO ==== */
+header {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    width: 130px;
+    height: auto;
+    margin-right: 50px;
+}
+
+header button {
+    background-color: #ff7f00;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #ff944d;
+}
+
+/* ==== FORMULARIO LOGIN ==== */
+form {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 3px solid orange;
+}
+
+form {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="submit"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+form label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ff7f00;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #ff7f00;
+    outline: none;
+}
+
+form input[type="submit"] {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #fff3e0;
+    border: 2px solid #ff7f00;
+    border-radius: 10px;
+    color: #ff7f00;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #ff7f00;
+    color: white;
+}
+
+/* ==== MENSAJES DE ÉXITO Y ERROR ==== */
+.alert {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ==== ENLACES ==== */
+a {
+    color: #ff7f00;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #ff944d;
+    text-decoration: underline;
+}
+
+p a {
+    font-size: 18px;
+    padding: 6px 12px;
+    background-color: #fff3e0;
+    border: 2px solid #ff7f00;
+    border-radius: 5px;
+    color: #ff7f00;
+    font-weight: bold;
+}
+
+p a:hover {
+    background-color: #ff7f00;
+    color: white;
+}
+
+/* ==== INPUTS GENERALES ==== */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* ==== INPUT DE TIPO FILE ==== */
+input[type="file"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f4f4f9;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #ff7f00;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #ff944d;
+}
+
+/* ==== ENCABEZADOS ==== */
+h1, h2 {
+    color: #ff7f00;
+    text-align: center;
+}
+
+/* ==== CONTENEDOR GENERAL ==== */
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+}
+

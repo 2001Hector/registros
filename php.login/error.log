@@ -1,0 +1,2 @@
+[20-Oct-2024 17:07:20 UTC] Error en registro de usuario: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?ña, ?)' at line 1
+[20-Oct-2024 17:07:31 UTC] Error en registro de usuario: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '?ña, ?)' at line 1

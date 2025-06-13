@@ -1,0 +1,171 @@
+/* Navegación horizontal */
+.menu-horizontal ul {
+    display: flex;
+    gap: 20px; /* Espaciado entre elementos */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.menu-horizontal li {
+    display: inline;
+}
+
+.menu-horizontal a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 12px;
+}
+
+.menu-horizontal a:hover {
+    background-color: #e17c10;
+    border-radius: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #e67e22;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Estilo del botón de cerrar sesión */
+nav form button {
+    background-color: #c62828;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav form button:hover {
+    background-color: #b71c1c;
+}
+
+/* Ocultar secciones al inicio */
+#formulario,
+#proyectos {
+    display: none;
+}
+
+/*############# Estilo del formulario de registro de usuario ############*/
+/* Contenedor principal del formulario */
+.form-container {
+    background-color: #fff8f0; /* Fondo claro anaranjado */
+    padding: 40px;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Título del formulario */
+.form-container h3 {
+    text-align: center;
+    color: #d35400; /* Tono anaranjado fuerte */
+    margin-bottom: 30px;
+}
+
+/* Etiquetas */
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #7a4e15;
+    font-weight: bold;
+}
+
+/* Inputs, selects y textarea */
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container textarea,
+.form-container select,
+.form-container input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dcd0c0;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+/* Efecto al enfocar campos */
+.form-container input:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+    border-color: #e67e22;
+    outline: none;
+}
+
+/* Botón de envío */
+.form-container input[type="submit"] {
+    background-color: #e67e22; /* Anaranjado llamativo */
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+/* Efecto hover en botón */
+.form-container input[type="submit"]:hover {
+    background-color: #d35400;
+}
+
+/* Animación de entrada: izquierda */
+.slide-in-left {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+/* Animación de entrada: derecha */
+.slide-in-right {
+    animation: slideInRight 0.8s ease forwards;
+}
+
+/* Definición de animación izquierda */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Definición de animación derecha */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Fade general para el contenedor */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+

@@ -1,0 +1,428 @@
+/* Estilo general para la página */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../imagenes/fondo.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+head{
+
+    background-image: url('../imagenes/favicon.ico');
+}
+header {
+    width: 100%;
+    height: 80px;
+    background-color: white; /* Color de fondo del header */
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle algo de profundidad */
+    position: relative; /* Mantiene el header en la parte superior */
+    
+}
+
+header img {
+    width: 130px; /* Tamaño del logo */
+    height: auto;
+    margin-right: 50px; /* Espacio entre el logo y el texto */
+    position: relative;
+    
+}
+header button {
+    background-color:  #ff7f00; /* Color del botón */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Borde redondeado */
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color:  #ff7f00; /* Color al pasar el cursor */
+}
+
+/* Centrar los formularios y tablas */
+.container {
+    max-width: 900px; /* Ajusta este valor según tu diseño */
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+}
+
+/* Estilos generales de formularios */
+form {
+    /*background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;*/
+
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezados */
+h1, h2 {
+    color: #ff7f00;
+    text-align: center;
+}
+
+/* Estilo de la tabla */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    text-align: left;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table thead tr {
+    background-color: #ff7f00; /* Naranja intenso */
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #ff7f00;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f3f3f3; /* Cambio de color al pasar el ratón */
+}
+
+.styled-table a {
+    color: #ff7f00; /* Naranja intenso para los enlaces */
+    text-decoration: none;
+}
+
+.styled-table a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos de los botones */
+button {
+    background-color: #ff7f00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff8c32;
+}
+
+/* Estilo para los enlaces con botones */
+a button {
+    margin-top: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo simple y profesional para el input de tipo file */
+input[type="file"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f4f4f9;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #ff7f00; /* Naranja suave */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #ff944d; /* Naranja un poco más claro al pasar el cursor */
+}
+
+/* Estilo para los mensajes de éxito y error */
+.alert {
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.success {
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Texto verde oscuro */
+    border: 1px solid #c3e6cb; /* Borde verde */
+}
+
+.error {
+    background-color: #f8d7da; /* Rojo claro */
+    color: #721c24; /* Texto rojo oscuro */
+    border: 1px solid #f5c6cb; /* Borde rojo */
+}
+
+/*BOTON DE REGISTRAR */
+
+a {
+    color: #ff7f00; /* Naranja brillante */
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #ff944d;
+    text-decoration: underline;
+}
+
+/* Si solo quieres aplicar estilo al enlace del párrafo final */
+p a {
+    font-size: 18px;
+    padding: 6px 12px;
+    background-color: #fff3e0; /* Fondo suave */
+    border: 2px solid #ff7f00;
+    border-radius: 5px;
+    color: #ff7f00;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+p a:hover {
+    background-color: #ff7f00;
+    color: white;
+    text-decoration: none;
+}
+
+input[type="submit"] {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #fff3e0; /* Fondo suave */
+    border: 2px solid #ff7f00;
+    border-radius: 5px;
+    color: #ff7f00;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff7f00;
+    color: white;
+}
+
+
+/* FORMULARIO LOGIN REDONDO */
+form {
+    background-color: #fffaf3; /* Fondo suave */
+    padding: 30px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto; /* Centrado */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid #ffecd1;
+}
+
+form label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+form input[type="email"],
+form input[type="password"] {
+    padding: 8px 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #ff7f00;
+    outline: none;
+}
+
+form input[type="submit"] {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #fff3e0;
+    border: 2px solid #ff7f00;
+    border-radius: 10px;
+    color: #ff7f00;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #ff7f00;
+    color: white;
+}
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header {
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        .proyectos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .proyecto-bolita {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #009879;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .proyecto-bolita:hover {
+            transform: scale(1.05);
+        }
+        .proyecto-tipo {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .proyecto-cantidad {
+            font-size: 24px;
+        }
+        .total-proyectos {
+            background-color: #333;
+        }
+        .volver-btn, .descargar-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #009879;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        .volver-btn:hover, .descargar-btn:hover {
+            background-color: #007f63;
+        }
+        .detalles-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            max-width: 1000px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #009879;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .titulo-detalle {
+            color: #009879;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .estudiantes-cell {
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
+
+
+    
+
+
+

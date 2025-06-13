@@ -1,0 +1,221 @@
+/* ==== ESTILO GENERAL DE LA PÁGINA ==== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    /* Fuente moderna y legible */
+    background-image: url('../imagenes/registro.jpg');
+    /* Fondo con degradado suave */
+    background-size: cover;/*para no perder calidad*/
+    background-position: relative;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* ==== CONTENEDOR DEL FORMULARIO ==== */
+.contenedor-formulario {
+    background: rgba(255, 255, 255, 0.2); /* Fondo muy claro y transparente */
+    backdrop-filter: blur(10px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+    padding: 40px; /* Espaciado interno */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    max-width: 400px; /* Ancho máximo */
+    width: 90%; /* Adaptación a pantallas pequeñas */
+    animation: fadeIn 1s ease forwards; /* Animación inicial al aparecer */
+}
+
+
+/* ==== TÍTULO DEL FORMULARIO ==== */
+.contenedor-formulario h2 {
+    text-align: center;
+    color: #ff7f00;
+    /* Color naranja */
+    margin-bottom: 20px;
+}
+
+/* ==== CAMPOS DEL FORMULARIO ==== */
+.campo {
+    margin-bottom: 15px;
+    /* Espacio entre campos */
+    opacity: 0;
+    /* Inicialmente oculto para animación */
+    transform: translateX(0);
+    /* Posición base */
+}
+
+/* ==== ETIQUETAS DE LOS CAMPOS ==== */
+label {
+    display: block;
+    /* Cada etiqueta en su línea */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    /* Gris oscuro */
+}
+
+/* ==== INPUTS Y SELECTS ==== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    /* Que ocupe todo el ancho del contenedor */
+    padding: 10px;
+    border: 1px solid #bbb;
+    /* Borde gris claro */
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+    /* Suaviza el cambio de borde al enfocar */
+}
+
+/* ==== EFECTO AL ENFOCAR UN CAMPO ==== */
+input:focus,
+select:focus {
+    border-color: #ff7f00;
+    /* Borde naranja al enfocar */
+    outline: none;
+    /* Quita el borde azul predeterminado */
+}
+
+/* ==== BOTÓN DE ENVÍO ==== */
+input[type="submit"] {
+    background-color: #ff7f00;
+    /* Fondo naranja */
+    color: white;
+    /* Texto blanco */
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease;
+}
+
+/* ==== EFECTO HOVER EN BOTÓN ==== */
+input[type="submit"]:hover {
+    background-color: #ff944d;
+    /* Naranja más claro */
+}
+
+/* ==== ENLACE DE INICIO DE SESIÓN ==== */
+p a {
+    color: #ff7f00;
+    /* Mismo naranja */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ==== EFECTO HOVER EN ENLACE ==== */
+p a:hover {
+    text-decoration: underline;
+}
+
+/* ==== MENSAJES DE ERROR Y ÉXITO ==== */
+.error {
+    color: #721c24;
+    /* Rojo oscuro */
+    background-color: #f8d7da;
+    /* Fondo rojo claro */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.success {
+    color: #155724;
+    /* Verde oscuro */
+    background-color: #d4edda;
+    /* Fondo verde claro */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* ==== ANIMACIÓN DE APARICIÓN GENERAL ==== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    /* Comienza ligeramente más pequeño y transparente */
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Termina normal y visible */
+}
+
+/* ==== ANIMACIONES DE ENTRADA LATERAL ==== */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    /* Desde la derecha */
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    /* Hasta su lugar */
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    /* Desde la izquierda */
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    /* Hasta su lugar */
+}
+
+/* ==== CLASES PARA APLICAR LAS ANIMACIONES ==== */
+.animar.derecha {
+    animation: slideInRight 0.6s ease forwards;
+}
+
+.animar.izquierda {
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+/* ==== EFECTO EN CASCADA (RETARDO) ==== */
+.animar:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.animar:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.animar:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.animar:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.animar:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.animar:nth-child(6) {
+    animation-delay: 1.2s;
+}

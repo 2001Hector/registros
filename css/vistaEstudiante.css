@@ -1,0 +1,49 @@
+.resultados-derecha {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right; /* Centrado en vez de flotado */
+    gap: 20px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.proyecto-card {
+    background: linear-gradient(135deg, #ffffff, #e8f0fe);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.proyecto-card h3 {
+    color: #1a73e8;
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.proyecto-card p {
+    margin: 6px 0;
+    font-size: 0.95em;
+    color: #333;
+}
+
+
+/* Para pantallas pequeñas: apila los elementos */
+@media (max-width: 768px) {
+    .resultados-derecha {
+        justify-content: center;
+    }
+
+    .proyecto-card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
