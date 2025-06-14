@@ -17,6 +17,7 @@ $proyectos_json = json_encode($proyectos);
     <link rel="stylesheet" href="../css/style_reg_usuar.css">
     <meta charset="UTF-8">
     <title>Generador de Reportes PDF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../imagenes/favicon.ico" type="image/x-icon">
     
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

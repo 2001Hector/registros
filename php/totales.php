@@ -60,10 +60,8 @@ $conn->close();
     <link rel="stylesheet" href="css/style_reg_usuar.css">
     <title>Estadísticas de Proyectos</title>
     <link rel="icon" href="../imagenes/favicon.ico" type="image/x-icon">
-    <header>
-       <img src="../imagenes/logo.ico" alt="Logo de la empresa"  style="width: 130px; height: 150px; object-fit: cover; border-radius: 10px;">
-         
-    </header>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -170,6 +168,10 @@ $conn->close();
         }
     </style>
 </head>
+<header>
+       <img src="../imagenes/logo.ico" alt="Logo de la empresa"  style="width: 130px; height: 150px; object-fit: cover; border-radius: 10px;">
+         
+    </header>
 <body>
 
 <h2>Resumen de Proyectos por Tipo</h2>
