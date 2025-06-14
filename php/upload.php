@@ -1,6 +1,6 @@
 <?php
 require_once 'conexionB.php';
-session_start(); // Iniciar la sesión
+
 
 // Comprobar si el usuario está autenticado
 if (!isset($_SESSION['id_registrador'])) {
