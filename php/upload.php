@@ -1,7 +1,13 @@
 <?php
 require_once 'conexionB.php';
+session_start(); // Iniciar la sesión
 
-$conn = $GLOBALS['conn']; // Usa la conexión global definida en conexionB.php
+// Comprobar si el usuario está autenticado
+if (!isset($_SESSION['id_registrador'])) {
+    header("Location: index.php"); // Redirigir a login si no está autenticado
+    exit;
+}
+
 $usuarioId = $_SESSION['id_registrador']; // Obtener el ID del usuario
 
 
@@ -313,5 +319,4 @@ if ($result->num_rows > 0) {
         }
     </script>
 </body>
-</html>
 </html>
