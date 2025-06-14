@@ -253,14 +253,21 @@ $conn->close();
 
             <label for="id_tipo">Tipo de Proyecto:</label>
             <select id="id_tipo" name="id_tipo" required>
-                <option value="">Seleccione una opción</option>
-                <option value="Con opción a grado" <?= $proyecto['id_tipo'] == 'Con opción a grado' ? 'selected' : '' ?>>
-                    Con opción a grado</option>
-                <option value="Convocatoria interna" <?= $proyecto['id_tipo'] == 'Convocatoria interna' ? 'selected' : '' ?>>Convocatoria interna</option>
-                <option value="Convocatoria externa" <?= $proyecto['id_tipo'] == 'Convocatoria externa' ? 'selected' : '' ?>>Convocatoria externa</option>
-                <option value="Convocatoria de creación de semilleros" <?= $proyecto['id_tipo'] == 'Convocatoria de creación de semilleros' ? 'selected' : '' ?>>Convocatoria de creación de semilleros</option>
-                <option value="Convocatoria de financiación de semilleros" <?= $proyecto['id_tipo'] == 'Convocatoria de financiación de semilleros' ? 'selected' : '' ?>>Convocatoria de financiación de semilleros</option>
-                <option value="Convocatoria circulares" <?= $proyecto['id_tipo'] == 'Convocatoria circulares' ? 'selected' : '' ?>>Convocatoria circulares</option>
+               <option value="Proyectos de investigación básica" <?= $proyecto['id_tipo'] == 'Proyectos de investigación básica' ? 'selected' : '' ?>>Proyectos de investigación básica</option>
+<option value="Proyectos de investigación aplicada" <?= $proyecto['id_tipo'] == 'Proyectos de investigación aplicada' ? 'selected' : '' ?>>Proyectos de investigación aplicada</option>
+<option value="Proyectos de desarrollo tecnológico" <?= $proyecto['id_tipo'] == 'Proyectos de desarrollo tecnológico' ? 'selected' : '' ?>>Proyectos de desarrollo tecnológico</option>
+<option value="Proyectos de innovación educativa" <?= $proyecto['id_tipo'] == 'Proyectos de innovación educativa' ? 'selected' : '' ?>>Proyectos de innovación educativa</option>
+<option value="Proyectos interdisciplinarios" <?= $proyecto['id_tipo'] == 'Proyectos interdisciplinarios' ? 'selected' : '' ?>>Proyectos interdisciplinarios</option>
+<option value="Proyectos de cooperación internacional" <?= $proyecto['id_tipo'] == 'Proyectos de cooperación internacional' ? 'selected' : '' ?>>Proyectos de cooperación internacional</option>
+<option value="Proyectos de sostenibilidad ambiental" <?= $proyecto['id_tipo'] == 'Proyectos de sostenibilidad ambiental' ? 'selected' : '' ?>>Proyectos de sostenibilidad ambiental</option>
+<option value="Proyectos de impacto social" <?= $proyecto['id_tipo'] == 'Proyectos de impacto social' ? 'selected' : '' ?>>Proyectos de impacto social</option>
+<option value="Proyectos de emprendimiento" <?= $proyecto['id_tipo'] == 'Proyectos de emprendimiento' ? 'selected' : '' ?>>Proyectos de emprendimiento</option>
+<option value="Proyectos de arte y cultura" <?= $proyecto['id_tipo'] == 'Proyectos de arte y cultura' ? 'selected' : '' ?>>Proyectos de arte y cultura</option>
+<option value="Proyectos de salud pública" <?= $proyecto['id_tipo'] == 'Proyectos de salud pública' ? 'selected' : '' ?>>Proyectos de salud pública</option>
+<option value="Proyectos de desarrollo rural" <?= $proyecto['id_tipo'] == 'Proyectos de desarrollo rural' ? 'selected' : '' ?>>Proyectos de desarrollo rural</option>
+<option value="Proyectos de inteligencia artificial" <?= $proyecto['id_tipo'] == 'Proyectos de inteligencia artificial' ? 'selected' : '' ?>>Proyectos de inteligencia artificial</option>
+<option value="Proyectos de realidad virtual" <?= $proyecto['id_tipo'] == 'Proyectos de realidad virtual' ? 'selected' : '' ?>>Proyectos de realidad virtual</option>
+<option value="Proyectos de energías renovables" <?= $proyecto['id_tipo'] == 'Proyectos de energías renovables' ? 'selected' : '' ?>>Proyectos de energías renovables</option>
             </select>
 
             <label for="nom_proyecto">Nombre del Proyecto:</label>
@@ -270,21 +277,54 @@ $conn->close();
             <label for="id_programa">Programa:</label>
             <select id="id_programa" name="id_programa" required>
                 <option value="">Seleccione una opción</option>
-                <option value="Facultad de Ciencias Económicas y Administrativas" <?= $proyecto['id_programa'] == 'Facultad de Ciencias Económicas y Administrativas' ? 'selected' : '' ?>>Facultad de Ciencias Económicas y
-                    Administrativas</option>
-                <option value="Facultad de Ciencias Sociales y Humanas" <?= $proyecto['id_programa'] == 'Facultad de Ciencias Sociales y Humanas' ? 'selected' : '' ?>>Facultad de Ciencias Sociales y Humanas</option>
-                <option value="Facultad de Ciencias de la Educación" <?= $proyecto['id_programa'] == 'Facultad de Ciencias de la Educación' ? 'selected' : '' ?>>Facultad de Ciencias de la Educación</option>
-                <option value="Facultad de Ingeniería en Sistemas" <?= $proyecto['id_programa'] == 'Facultad de Ingeniería en Sistemas' ? 'selected' : '' ?>>Facultad de Ingeniería en Sistemas</option>
+            <option value="Facultad de Ciencias Económicas y Administrativas" <?= $proyecto['id_programa'] == 'Facultad de Ciencias Económicas y Administrativas' ? 'selected' : '' ?>>Facultad de Ciencias Económicas y Administrativas</option>
+<option value="Facultad de Ciencias Sociales y Humanas" <?= $proyecto['id_programa'] == 'Facultad de Ciencias Sociales y Humanas' ? 'selected' : '' ?>>Facultad de Ciencias Sociales y Humanas</option>
+<option value="Facultad de Ciencias de la Educación" <?= $proyecto['id_programa'] == 'Facultad de Ciencias de la Educación' ? 'selected' : '' ?>>Facultad de Ciencias de la Educación</option>
+<option value="Facultad de Ingeniería en Sistemas" <?= $proyecto['id_programa'] == 'Facultad de Ingeniería en Sistemas' ? 'selected' : '' ?>>Facultad de Ingeniería en Sistemas</option>
+<option value="Facultad de Medicina y Ciencias de la Salud" <?= $proyecto['id_programa'] == 'Facultad de Medicina y Ciencias de la Salud' ? 'selected' : '' ?>>Facultad de Medicina y Ciencias de la Salud</option>
+<option value="Facultad de Derecho y Ciencias Políticas" <?= $proyecto['id_programa'] == 'Facultad de Derecho y Ciencias Políticas' ? 'selected' : '' ?>>Facultad de Derecho y Ciencias Políticas</option>
+<option value="Facultad de Arquitectura y Diseño" <?= $proyecto['id_programa'] == 'Facultad de Arquitectura y Diseño' ? 'selected' : '' ?>>Facultad de Arquitectura y Diseño</option>
+<option value="Facultad de Ingeniería Civil y Ambiental" <?= $proyecto['id_programa'] == 'Facultad de Ingeniería Civil y Ambiental' ? 'selected' : '' ?>>Facultad de Ingeniería Civil y Ambiental</option>
+<option value="Facultad de Artes Visuales y Escénicas" <?= $proyecto['id_programa'] == 'Facultad de Artes Visuales y Escénicas' ? 'selected' : '' ?>>Facultad de Artes Visuales y Escénicas</option>
+<option value="Facultad de Ciencias Agrarias y Veterinaria" <?= $proyecto['id_programa'] == 'Facultad de Ciencias Agrarias y Veterinaria' ? 'selected' : '' ?>>Facultad de Ciencias Agrarias y Veterinaria</option>
+<option value="Facultad de Psicología y Neurociencias" <?= $proyecto['id_programa'] == 'Facultad de Psicología y Neurociencias' ? 'selected' : '' ?>>Facultad de Psicología y Neurociencias</option>
+<option value="Facultad de Química y Farmacia" <?= $proyecto['id_programa'] == 'Facultad de Química y Farmacia' ? 'selected' : '' ?>>Facultad de Química y Farmacia</option>
+<option value="Facultad de Ingeniería Electrónica y Telecomunicaciones" <?= $proyecto['id_programa'] == 'Facultad de Ingeniería Electrónica y Telecomunicaciones' ? 'selected' : '' ?>>Facultad de Ingeniería Electrónica y Telecomunicaciones</option>
+<option value="Facultad de Matemáticas y Ciencias Físicas" <?= $proyecto['id_programa'] == 'Facultad de Matemáticas y Ciencias Físicas' ? 'selected' : '' ?>>Facultad de Matemáticas y Ciencias Físicas</option>
+<option value="Facultad de Lenguas y Filología" <?= $proyecto['id_programa'] == 'Facultad de Lenguas y Filología' ? 'selected' : '' ?>>Facultad de Lenguas y Filología</option>
+<option value="Facultad de Negocios Internacionales" <?= $proyecto['id_programa'] == 'Facultad de Negocios Internacionales' ? 'selected' : '' ?>>Facultad de Negocios Internacionales</option>
+<option value="Facultad de Ciencias del Mar" <?= $proyecto['id_programa'] == 'Facultad de Ciencias del Mar' ? 'selected' : '' ?>>Facultad de Ciencias del Mar</option>
+<option value="Facultad de Ingeniería Industrial" <?= $proyecto['id_programa'] == 'Facultad de Ingeniería Industrial' ? 'selected' : '' ?>>Facultad de Ingeniería Industrial</option>
+<option value="Facultad de Música y Producción Audiovisual" <?= $proyecto['id_programa'] == 'Facultad de Música y Producción Audiovisual' ? 'selected' : '' ?>>Facultad de Música y Producción Audiovisual</option>
+
             </select>
 
-            <label for="modalidad">Tipo de modalidad:</label>
+            <label for="modalidad">Modalidad:</label>
             <select id="modalidad" name="modalidad" required>
                 <option value="">Seleccione una modalidad</option>
                 <option value="desempeño academico" <?= $proyecto['modalidad'] == 'desempeño academico' ? 'selected' : '' ?>>desempeño academico</option>
-                <option value="practicas empresariales" <?= $proyecto['modalidad'] == 'practicas empresariales' ? 'selected' : '' ?>>practicas empresariales</option>
-                <option value="pasantias" <?= $proyecto['modalidad'] == 'pasantias' ? 'selected' : '' ?>>pasantias</option>
-                <option value="trabajo de investigacion" <?= $proyecto['modalidad'] == 'trabajo de investigacion' ? 'selected' : '' ?>>trabajo de investigacion</option>
-                <option value="semestre de posgrado" <?= $proyecto['modalidad'] == 'semestre de posgrado' ? 'selected' : '' ?>>semestre de posgrado</option>
+<option value="Modalidad de desempeño académico" <?= $proyecto['modalidad'] == 'Modalidad de desempeño académico' ? 'selected' : '' ?>>Modalidad de desempeño académico</option>
+<option value="Modalidad de prácticas empresariales" <?= $proyecto['modalidad'] == 'Modalidad de prácticas empresariales' ? 'selected' : '' ?>>Modalidad de prácticas empresariales</option>
+<option value="Modalidad de pasantías" <?= $proyecto['modalidad'] == 'Modalidad de pasantías' ? 'selected' : '' ?>>Modalidad de pasantías</option>
+<option value="Modalidad de trabajo de investigación" <?= $proyecto['modalidad'] == 'Modalidad de trabajo de investigación' ? 'selected' : '' ?>>Modalidad de trabajo de investigación</option>
+<option value="Modalidad de semestre de posgrado" <?= $proyecto['modalidad'] == 'Modalidad de semestre de posgrado' ? 'selected' : '' ?>>Modalidad de semestre de posgrado</option>
+<option value="Modalidad de investigación básica" <?= $proyecto['modalidad'] == 'Modalidad de investigación básica' ? 'selected' : '' ?>>Modalidad de investigación básica</option>
+<option value="Modalidad de investigación aplicada" <?= $proyecto['modalidad'] == 'Modalidad de investigación aplicada' ? 'selected' : '' ?>>Modalidad de investigación aplicada</option>
+<option value="Modalidad de desarrollo tecnológico" <?= $proyecto['modalidad'] == 'Modalidad de desarrollo tecnológico' ? 'selected' : '' ?>>Modalidad de desarrollo tecnológico</option>
+<option value="Modalidad de innovación educativa" <?= $proyecto['modalidad'] == 'Modalidad de innovación educativa' ? 'selected' : '' ?>>Modalidad de innovación educativa</option>
+<option value="Modalidad de proyectos interdisciplinarios" <?= $proyecto['modalidad'] == 'Modalidad de proyectos interdisciplinarios' ? 'selected' : '' ?>>Modalidad de proyectos interdisciplinarios</option>
+<option value="Modalidad de cooperación internacional" <?= $proyecto['modalidad'] == 'Modalidad de cooperación internacional' ? 'selected' : '' ?>>Modalidad de cooperación internacional</option>
+<option value="Modalidad de sostenibilidad ambiental" <?= $proyecto['modalidad'] == 'Modalidad de sostenibilidad ambiental' ? 'selected' : '' ?>>Modalidad de sostenibilidad ambiental</option>
+<option value="Modalidad de impacto social" <?= $proyecto['modalidad'] == 'Modalidad de impacto social' ? 'selected' : '' ?>>Modalidad de impacto social</option>
+<option value="Modalidad de emprendimiento" <?= $proyecto['modalidad'] == 'Modalidad de emprendimiento' ? 'selected' : '' ?>>Modalidad de emprendimiento</option>
+<option value="Modalidad de arte y cultura" <?= $proyecto['modalidad'] == 'Modalidad de arte y cultura' ? 'selected' : '' ?>>Modalidad de arte y cultura</option>
+<option value="Modalidad de salud pública" <?= $proyecto['modalidad'] == 'Modalidad de salud pública' ? 'selected' : '' ?>>Modalidad de salud pública</option>
+<option value="Modalidad de desarrollo rural" <?= $proyecto['modalidad'] == 'Modalidad de desarrollo rural' ? 'selected' : '' ?>>Modalidad de desarrollo rural</option>
+<option value="Modalidad de inteligencia artificial" <?= $proyecto['modalidad'] == 'Modalidad de inteligencia artificial' ? 'selected' : '' ?>>Modalidad de inteligencia artificial</option>
+<option value="Modalidad de realidad virtual" <?= $proyecto['modalidad'] == 'Modalidad de realidad virtual' ? 'selected' : '' ?>>Modalidad de realidad virtual</option>
+<option value="Modalidad de energías renovables" <?= $proyecto['modalidad'] == 'Modalidad de energías renovables' ? 'selected' : '' ?>>Modalidad de energías renovables</option>
+
+
             </select>
 
             <div class="flex-buttons">

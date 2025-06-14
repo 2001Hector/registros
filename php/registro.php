@@ -238,20 +238,27 @@ $conn->close();
             <label for="modalidad">Modalidad:</label>
             <select id="modalidad" name="modalidad" required>
                 <option value="">Seleccione una opción</option>
-<option value="Trabajo de grado en grupo">Trabajo de grado en grupo</option>
-<option value="Proyecto de investigación">Proyecto de investigación</option>
-<option value="Proyecto de extensión">Proyecto de extensión</option>
-<option value="Proyecto de innovación">Proyecto de innovación</option>
-<option value="Práctica profesional">Práctica profesional</option>
-<option value="Pasantía investigativa">Pasantía investigativa</option>
-<option value="Semillero de investigación">Semillero de investigación</option>
-<option value="Proyecto interdisciplinario">Proyecto interdisciplinario</option>
-<option value="Proyecto transdisciplinario">Proyecto transdisciplinario</option>
-<option value="Proyecto de impacto social">Proyecto de impacto social</option>
-<option value="Proyecto de aula">Proyecto de aula</option>
-<option value="Investigación formativa">Investigación formativa</option>
-<option value="Proyecto institucional">Proyecto institucional</option>
-<option value="Proyecto colaborativo internacional">Proyecto colaborativo internacional</option>
+<option value="Modalidad de desempeño académico" <?= $proyecto['modalidad'] == 'Modalidad de desempeño académico' ? 'selected' : '' ?>>Modalidad de desempeño académico</option>
+<option value="Modalidad de prácticas empresariales" <?= $proyecto['modalidad'] == 'Modalidad de prácticas empresariales' ? 'selected' : '' ?>>Modalidad de prácticas empresariales</option>
+<option value="Modalidad de pasantías" <?= $proyecto['modalidad'] == 'Modalidad de pasantías' ? 'selected' : '' ?>>Modalidad de pasantías</option>
+<option value="Modalidad de trabajo de investigación" <?= $proyecto['modalidad'] == 'Modalidad de trabajo de investigación' ? 'selected' : '' ?>>Modalidad de trabajo de investigación</option>
+<option value="Modalidad de semestre de posgrado" <?= $proyecto['modalidad'] == 'Modalidad de semestre de posgrado' ? 'selected' : '' ?>>Modalidad de semestre de posgrado</option>
+<option value="Modalidad de investigación básica" <?= $proyecto['modalidad'] == 'Modalidad de investigación básica' ? 'selected' : '' ?>>Modalidad de investigación básica</option>
+<option value="Modalidad de investigación aplicada" <?= $proyecto['modalidad'] == 'Modalidad de investigación aplicada' ? 'selected' : '' ?>>Modalidad de investigación aplicada</option>
+<option value="Modalidad de desarrollo tecnológico" <?= $proyecto['modalidad'] == 'Modalidad de desarrollo tecnológico' ? 'selected' : '' ?>>Modalidad de desarrollo tecnológico</option>
+<option value="Modalidad de innovación educativa" <?= $proyecto['modalidad'] == 'Modalidad de innovación educativa' ? 'selected' : '' ?>>Modalidad de innovación educativa</option>
+<option value="Modalidad de proyectos interdisciplinarios" <?= $proyecto['modalidad'] == 'Modalidad de proyectos interdisciplinarios' ? 'selected' : '' ?>>Modalidad de proyectos interdisciplinarios</option>
+<option value="Modalidad de cooperación internacional" <?= $proyecto['modalidad'] == 'Modalidad de cooperación internacional' ? 'selected' : '' ?>>Modalidad de cooperación internacional</option>
+<option value="Modalidad de sostenibilidad ambiental" <?= $proyecto['modalidad'] == 'Modalidad de sostenibilidad ambiental' ? 'selected' : '' ?>>Modalidad de sostenibilidad ambiental</option>
+<option value="Modalidad de impacto social" <?= $proyecto['modalidad'] == 'Modalidad de impacto social' ? 'selected' : '' ?>>Modalidad de impacto social</option>
+<option value="Modalidad de emprendimiento" <?= $proyecto['modalidad'] == 'Modalidad de emprendimiento' ? 'selected' : '' ?>>Modalidad de emprendimiento</option>
+<option value="Modalidad de arte y cultura" <?= $proyecto['modalidad'] == 'Modalidad de arte y cultura' ? 'selected' : '' ?>>Modalidad de arte y cultura</option>
+<option value="Modalidad de salud pública" <?= $proyecto['modalidad'] == 'Modalidad de salud pública' ? 'selected' : '' ?>>Modalidad de salud pública</option>
+<option value="Modalidad de desarrollo rural" <?= $proyecto['modalidad'] == 'Modalidad de desarrollo rural' ? 'selected' : '' ?>>Modalidad de desarrollo rural</option>
+<option value="Modalidad de inteligencia artificial" <?= $proyecto['modalidad'] == 'Modalidad de inteligencia artificial' ? 'selected' : '' ?>>Modalidad de inteligencia artificial</option>
+<option value="Modalidad de realidad virtual" <?= $proyecto['modalidad'] == 'Modalidad de realidad virtual' ? 'selected' : '' ?>>Modalidad de realidad virtual</option>
+<option value="Modalidad de energías renovables" <?= $proyecto['modalidad'] == 'Modalidad de energías renovables' ? 'selected' : '' ?>>Modalidad de energías renovables</option>
+
 
             </select>
             
