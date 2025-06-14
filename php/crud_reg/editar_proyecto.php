@@ -302,7 +302,6 @@ $conn->close();
             <label for="modalidad">Modalidad:</label>
             <select id="modalidad" name="modalidad" required>
                 <option value="">Seleccione una modalidad</option>
-                <option value="desempeño academico" <?= $proyecto['modalidad'] == 'desempeño academico' ? 'selected' : '' ?>>desempeño academico</option>
 <option value="Modalidad de desempeño académico" <?= $proyecto['modalidad'] == 'Modalidad de desempeño académico' ? 'selected' : '' ?>>Modalidad de desempeño académico</option>
 <option value="Modalidad de prácticas empresariales" <?= $proyecto['modalidad'] == 'Modalidad de prácticas empresariales' ? 'selected' : '' ?>>Modalidad de prácticas empresariales</option>
 <option value="Modalidad de pasantías" <?= $proyecto['modalidad'] == 'Modalidad de pasantías' ? 'selected' : '' ?>>Modalidad de pasantías</option>
