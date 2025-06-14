@@ -1,9 +1,9 @@
 <?php
 session_start(); // Iniciar la sesión
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$dbname = 'archivos_db';
+$host = 'mysql.hostinger.com';
+$user = 'u648222299_hector';
+$password = 'Proyectou2025';
+$dbname = 'u648222299_base_hector';
 
 // Crear conexión
 $conn = new mysqli($host, $user, $password, $dbname);
