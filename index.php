@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Redirigir según el tipo de usuario
         if ($usuario['id_registrador'] == 3) {
-            header("Location: php/Upload.php"); // Administrador
+            header("Location: php/upload.php"); // Administrador
         } else {
             header("Location: php/registro.php"); // Usuario común
         }
