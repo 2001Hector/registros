@@ -91,11 +91,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buscar'])) {
             <label for="id_estudiante">ID del Estudiante:</label>
             <input type="text" id="id_estudiante" name="id_estudiante" required
                 placeholder="Ingrese el ID del estudiante (ej: 12345)">
-            <dir class="botones">
-                <button type="submit" name="buscar" class="btn">Buscar</button>
-                <button type="button" onclick="window.location.href='login.php'" class="danger">Volver</button>
-            </dir>
-
+            <div class="botones">
+    <button type="submit" name="buscar" class="btn">Buscar</button>
+    <button type="button" onclick="window.location.href='index.php'" class="danger">Volver</button>
+</div>
 
         </form>
 

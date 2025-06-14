@@ -1,18 +1,5 @@
 <?php
-
-// Datos de conexión
-$host = 'localhost';
-$user = 'root'; 
-$password = ''; 
-$dbname = 'archivos_db';
-
-$conn = new mysqli($host, $user, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
-} else {
-    echo "Conexión exitosa a la base de datos.<br>";
-}
+require_once 'conexionB.php';
 
 if (isset($_POST['submit_proyecto'])) {
     $ano = $_POST['ano'];

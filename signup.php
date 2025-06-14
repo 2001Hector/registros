@@ -125,7 +125,7 @@ $csrf_token = generateCSRFToken();
                 <input type="submit" value="Registrarse">
             </div>
         </form>
-        <p>¿Ya tienes una cuenta? <a href="login.php">Inicia sesión aquí</a></p>
+        <p>¿Ya tienes una cuenta? <a href="index.php">Inicia sesión aquí</a></p>
         <br>
         <div style="background-color: #f0f4ff; border-left: 4px solid #3b82f6; padding: 10px 15px; margin-top: 15px; font-size: 0.9em; color: #1e3a8a;">
   <strong>Importante:</strong> Si no ves nuestro mensaje en tu bandeja de entrada, revisa la carpeta de <em>spam</em> o <em>correo no deseado</em>. Te enviaremos una guía para que aprendas a usar el software fácilmente.

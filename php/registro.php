@@ -144,7 +144,7 @@ $conn->close();
                         </section>
                     </a></li>
                 <li>
-                    <form action="../login.php" method="get">
+                    <form action="../index.php" method="get">
                         <button type="submit"><img
                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABUUlEQVR4nO2ZsUoDQRCG9w2CzdxeLjaCiJUvkbcI+ArWvojPIBKsLRNui7yDlc1tEoxctFC8gZFJFAsxBm7XzYT54a8Ojvl2/9nbY4xRqeKJxt1DLPNhU+bP6HKK5Wb1fntLrnsStPimtIuYheMPELugSdELAsAr/5/F47dvggDEjs2GOC2DACRafWIrAEt3wGmE2kkj5PY4QvUgIxwJBvAA9NjP6P3OygVgz88yersWDOABaHaU0euVlQvg2Rbo5dIKBoC1v5pbLID/bO6HTucgOsCmItq6ArivrD0VC+DXfpoC9CUDUAWAU4ALBUCNEOxeE6P0YxT1Qwb7cZUQfZmbS75Oi/6hqc8zwvHvz82uA/xlowBGd4A0Qm2lTewSn0JNuhFTHQSAx55JYlTmwyAAPLNNMmYdFcdBAFYQk6LHY0+eHEaOzZJXPmjxKpXZSh9uWuw1BxqXFQAAAABJRU5ErkJggg=="
                                 alt="exit"></button>
