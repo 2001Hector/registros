@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
-require_once 'conexionB.php';
+require_once 'php/conexionB.php';
 
 $conn = $GLOBALS['conn']; // Usa la conexión global definida en conexionB.php
 
