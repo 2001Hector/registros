@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Redirigir dependiendo del id_registrador
         if ($usuario['id_registrador'] == 3) {
-            header("Location: php/upload.php");
+            header("Location: php/Upload.php");
             exit();
         } else {
             header("Location: php/registro.php");
