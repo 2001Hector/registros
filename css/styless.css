@@ -15,25 +15,31 @@ body {
 }
 
 .contenedor-formulario {
-    position: absolute;
-    top: 28%; /* o el valor que prefieras */
-    left: 30%;
-    transform: translate(-50%, -30%);
-    image-rendering:  center;
-    width: 95%;            /* Aumenta el ancho en pantallas grandes */
-    max-width: 450px;      /* Puedes subirlo de 350px a 450px o más */
-    
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto;
     padding: 30px;
     border-radius: 15px;
     box-sizing: border-box;
-    overflow: hidden;
 
-    /* Fondo borroso */
+    /* Fondo borroso tipo glass */
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 
     animation: fadeIn 0.8s ease-out forwards;
+
+    /* Centrado vertical y horizontal usando flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Quita el position absolute que daña en pantallas pequeñas */
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
 }
 
 
