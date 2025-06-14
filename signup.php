@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-
+session_start();
 require_once 'php/conexionB.php';
 require_once 'envioC.php'; // Incluye tu archivo con PHPMailer
 
@@ -16,6 +16,7 @@ function generateCSRFToken()
 
 $error = '';
 $success = '';
+$nombre = $sexo = $estatuto = $correo = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verificar token CSRF
@@ -37,33 +38,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (strlen($contraseña) < 8) {
         $error = "La contraseña debe tener al menos 8 caracteres";
     } else {
-        try {
-            // Verificar si el correo ya existe
-            $stmt = $pdo->prepare("SELECT COUNT(*) FROM usuarios WHERE correo = ?");
-            $stmt->execute([$correo]);
-            if (0) {
-                $error = "Este correo electrónico ya está registrado";
+        // Verificar si el correo ya existe
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM usuarios WHERE correo = ?");
+        $stmt->bind_param("s", $correo);
+        $stmt->execute();
+        $stmt->bind_result($count);
+        $stmt->fetch();
+        $stmt->close();
+        
+        if ($count > 0) {
+            $error = "Este correo electrónico ya está registrado";
+        } else {
+            // Hash de la contraseña
+            $contraseña_hash = password_hash($contraseña, PASSWORD_DEFAULT);
+
+            // Insertar nuevo usuario
+            $stmt = $conn->prepare("INSERT INTO usuarios (Nombre, sexo, estatuto, contraseña, correo) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssss", $nombre, $sexo, $estatuto, $contraseña_hash, $correo);
+            $result = $stmt->execute();
+            
+            if ($result) {
+                $success = "Usuario registrado con éxito, Te enviaremos una guía a tu correo para que aprendas a usar el software fácilmente.";
+                
+                // Enviar correo de confirmación
+                enviarCorreoPrueba($correo, $nombre, $sexo, $estatuto);
             } else {
-                // Hash de la contraseña
-                $contraseña_hash = password_hash($contraseña, PASSWORD_DEFAULT);
-
-                // Insertar nuevo usuario
-                $stmt = $pdo->prepare("INSERT INTO usuarios (Nombre, sexo, estatuto, contraseña, correo) VALUES (?, ?, ?, ?, ?)");
-                $result = $stmt->execute([$nombre, $sexo, $estatuto, $contraseña_hash, $correo]);
-
-                if ($result) {
-                    $success = "Usuario registrado con éxito , Te enviaremos una guía a tu correo para que aprendas a usar el software fácilmente..";
-
-                    // Enviar correo de confirmación
-                   enviarCorreoPrueba($correo, $nombre, $sexo, $estatuto);
-                    
-                } else {
-                    $error = "Error al registrar el usuario. Por favor, inténtelo de nuevo.";
-                }
+                $error = "Error al registrar el usuario. Por favor, inténtelo de nuevo.";
             }
-        } catch (PDOException $e) {
-            $error = "Ha ocurrido un error. Por favor, inténtelo de nuevo más tarde.";
-            // error_log("Error en registro: " . $e->getMessage());
+            $stmt->close();
         }
     }
 }
@@ -110,7 +112,6 @@ $csrf_token = generateCSRFToken();
                 <select id="estatuto" name="estatuto" required>
                     <option value="">Seleccione</option>
                     <option value="Docente" <?php echo (isset($estatuto) && $estatuto == 'Docente') ? 'selected' : ''; ?>>Docente</option>
-                   
                 </select>
             </div>
             <div class="campo animar izquierda">
@@ -128,9 +129,8 @@ $csrf_token = generateCSRFToken();
         <p>¿Ya tienes una cuenta? <a href="index.php">Inicia sesión aquí</a></p>
         <br>
         <div style="background-color: #f0f4ff; border-left: 4px solid #3b82f6; padding: 10px 15px; margin-top: 15px; font-size: 0.9em; color: #1e3a8a;">
-  <strong>Importante:</strong> Si no ves nuestro mensaje en tu bandeja de entrada, revisa la carpeta de <em>spam</em> o <em>correo no deseado</em>. Te enviaremos una guía para que aprendas a usar el software fácilmente.
-</div>
-
+            <strong>Importante:</strong> Si no ves nuestro mensaje en tu bandeja de entrada, revisa la carpeta de <em>spam</em> o <em>correo no deseado</em>. Te enviaremos una guía para que aprendas a usar el software fácilmente.
+        </div>
     </div>
     <script>
         document.getElementById('registroForm').addEventListener('submit', function (e) {
@@ -143,7 +143,5 @@ $csrf_token = generateCSRFToken();
             }
         });
     </script>
-   
-
 </body>
 </html>
