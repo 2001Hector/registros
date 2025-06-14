@@ -6,9 +6,9 @@ $password = 'Proyectou2025';
 $dbname = 'u648222299_base_hector';
 
 // Crear conexión
-$conn = new mysqli($host, $user, $password, $dbname);
+$pdo = new mysqli($host, $user, $password, $dbname);
 
 // Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+if ($pdo->connect_error) {
+    die("Conexión fallida: " . $pdo->connect_error);
 }

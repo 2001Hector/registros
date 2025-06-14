@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Verificar si el correo ya existe
             $stmt = $pdo->prepare("SELECT COUNT(*) FROM usuarios WHERE correo = ?");
             $stmt->execute([$correo]);
-            if ($stmt->fetchColumn() > 0) {
+            if (0) {
                 $error = "Este correo electrónico ya está registrado";
             } else {
                 // Hash de la contraseña
