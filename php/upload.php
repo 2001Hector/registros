@@ -7,9 +7,9 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Validar autenticación
-if (!isset($_SESSION['id_registrador'])) {
+if (!isset($_SESSION['id_registrador']) || $_SESSION['id_registrador'] != 3) {
     header("Location: ../index.php");
-    exit;
+    exit();
 }
 
 $usuarioId = $_SESSION['id_registrador'];
@@ -134,26 +134,21 @@ $resultFiles = $stmtFiles->get_result();
     <header>
         <aside class="topbar">
             <div class="navbar">
-                <!-- Botón hamburguesa -->
-                <button class="hamburger" onclick="toggleMenu()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACGElEQVR4nO2aT08TQRiH90TLAYIJUG/4OWy5EQgJRI8in8HU+C20HDCaGK58BCgBv0FDPNuW9oR6MeoZ0PiQXzKHxozbnXa2O9P0SZps0u7s/DrvvvP+mSSZMaUAD4CnQAM4AzrAL+DWfHTdNt/pN0+ApSQEgBKwD3wE/uCO7jkHnmuspAAB88Ar4Bv++Aq8BMqTErEN9MmPHrCVtxm9ZXIca+V9i6gAn5g8l8CqLxGPzHIXxZXmMK6IFeNGi6YPPBxVRLkgc0ozM3cXDXwgPN6N4mJDZdPFzXYJl16mTdPs2KFTz7IaChVC50vqi28CwFjYSxOiKDYWztLyCZdQ/HHiGaDq8PzfwKJtECVFLtRyELLuOIdd2yAHxMcbmxCloLFxYhOiKDM2OjYhP4mP7zYhqnQQkdcSNz6EhOC1bqbatLrER3uq3W+D+HhtE6JabGxea8c2yJJj0FjNQUjN4fl31qDRDHRBPDTT/hFVxWPh2bSkunPD7FSl/dB5keWFKwVSJv0fV5krjupPECZ/gY1MIgbEvCc8Dp1EDJiYCseh0Br6gqeIWQ6orVAZScQ/jZ4i0+AusDaWiAExqwWZWUvNJi8iLM1QeY5JcJRr7139iZxNrePsYsdcnboJFXxxrR27qBMQErRnskvVYl3RPU0FgCO7Vt8oN1AtVmVM4NQcoPkxcKhG15+VniqzU1IELHifyIwkDO4By8bd8bsJ49QAAAAASUVORK5CYII=" alt="xbox-menu"> </button>
+                <button class="hamburger" onclick="toggleMenu()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACGElEQVR4nO2aT08TQRiH90TLAYIJUG/4OWy5EQgJRI8in8HU+C20HDCaGK58BCgBv0FDPNuW9oR6MeoZ0PiQXzKHxozbnXa2O9P0SZps0u7s/DrvvvP+mSSZMaUAD4CnQAM4AzrAL+DWfHTdNt/pN0+ApSQEgBKwD3wE/uCO7jkHnmuspAAB88Ar4Bv++Aq8BMqTErEN9MmPHrDFt5m9ZXIca+V9i6gAn5g8l8CqLxGPzHIXxZXmMK6IFeNGi6YPPBxVRLkgc0ozM3cXDXwgPN6N4mJDZdPFzXYJl16mTdPs2KFTz7IaChVC50vqi28CwFjYSxOiKDYWztLyCZdQ/HHiGaDq8PzfwKJtECVFLtRyELLuOIdd2yAHxMcbmxCloLFxYhOiKDM2OjYhP4mP7zYhqnQQkdcSNz6EhOC1bqbatLrER3uq3W+D+HhtE6JabGxea8c2yJJj0FjNQUjN4fl31qDRDHRBPDTT/hFVxWPh2bSkunPD7FSl/dB5keWFKwVSJv0fV5krjupPECZ/gY1MIgbEvCc8Dp1EDJiYCseh0Br6gqeIWQ6orVAZScQ/jZ4i0+AusDaWiAExqwWZWUvNJi8iLM1QeY5JcJRr7139iZxNrePsYsdcnboJFXxxrR27qBMQErRnskvVYl3RPU0FgCO7Vt8oN1AtVmVM4NQcoPkxcKhG15+VniqzU1IELHifyIwkDO4By8bd8bsJ49QAAAAASUVORK5CYII=" alt="xbox-menu"> </button>
 
-                <!-- Menú desplegable -->
                 <div class="menu" id="menu">
                     <form action="totales.php" method="get">
-                        <button type="submit"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACBUlEQVR4nO2Z20sbQRiH90TLAYIJUG/4OWy5EQgJRI8in8HU+C20HDCaGK58BCgBv0FDPNuW9oR6MeoZ0PiQXzKHxozbnXa2O9P0SZps0u7s/DrvvvP+mSSZMaUAD4GnQAM4AzrAL+DWfHTdNt/pN0+ApSQEgBKwD3wE/uCO7jkHnmuspAAB88Ar4Bv++Aq8BMqTErEN9MmPHrCVtxm9ZXIca+V9i6gAn5g8l8CqLxGPzHIXxZXmMK6IFeNGi6YPPBxVRLkgc0ozM3cXDXwgPN6N4mJDZdPFzXYJl16mTdPs2KFTz7IaChVC50vqi28CwFjYSxOiKDYWztLyCZdQ/HHiGaDq8PzfwKJtECVFLtRyELLuOIdd2yAHxMcbmxCloLFxYhOiKDM2OjYhP4mP7zYhqnQQkdcSNz6EhOC1bqbatLrER3uq3W+D+HhtE6JabGxea8c2yJJj0FjNQUjN4fl31qDRDHRBPDTT/hFVxWPh2bSkunPD7FSl/dB5keWFKwVSJv0fV5krjupPECZ/gY1MIgbEvCc8Dp1EDJiYCseh0Br6gqeIWQ6orVAZScQ/jZ4i0+AusDaWiAExqwWZWUvNJi8iLM1QeY5JcJRr7139iZxNrePsYsdcnboJFXxxrR27qBMQErRnskvVYl3RPU0FgCO7Vt8oN1AtVmVM4NQcoPkxcKhG15+VniqzU1IELHifyIwkDO4By8bd8bsJ49QAAAAASUVORK5CYII=" alt="pdf--v2"></button>
+                        <button type="submit"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACBUlEQVR4nO2Z20sbQRiH90TLAYIJUG/4OWy5EQgJRI8in8HU+C20HDCaGK58BCgBv0FDPNuW9oR6MeoZ0PiQXzKHxozbnXa2O9P0SZps0u7s/DrvvvP+mSSZMaUAD4GnQAM4AzrAL+DWfHTdNt/pN0+ApSQEgBKwD3wE/uCO7jkHnmuspAAB88Ar4Bv++Aq8BMqTErEN9MmPHrCVtxm9ZXIca+V9i6gAn5g8l8CqLxGPzHImROxZXmMK6IFeNGi6YPPBxVRLkgc0ozM3cXDXwgPN6N4mJDZdPFzXYJl16mTdPs2KFTz7IaChVC50vqi28CwFjYSxOiKDYWztLyCZdQ/HHiGaDq8PzfwKJtECVFLtRyELLuOIdd2yAHxMcbmxCloLFxYhOiKDM2OjYhP4mP7zYhqnQQkdcSNz6EhOC1bqbatLrER3uq3W+D+HhtE6JabGxea8c2yJJj0FjNQUjN4fl31qDRDHRBPDTT/hFVxWPh2bSkunPD7FSl/dB5keWFKwVSJv0fV5krjupPECZ/gY1MIgbEvCc8Dp1EDJiYCseh0Br6gqeIWQ6orVAZScQ/jZ4i0+AusDaWiAExqwWZWUvNJi8iLM1QeY5JcJRr7139iZxNrePsYsdcnboJFXxxrR27qBMQErRnskvVYl3RPU0FgCO7Vt8oN1AtVmVM4NQcoPkxcKhG15+VniqzU1IELHifyIwkDO4By8bd8bsJ49QAAAAASUVORK5CYII=" alt="pdf--v2"></button>
                     </form>
                     <form action="../index.php" method="get">
                         <button type="submit"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEbElEQVR4nO2YX0xbVRzHTyECG0VGRrnnNCAtMOaWOcPDMp3JjIsaI0MHFXzwwanL3LinQzeK+mAw/nk1miVT1LeZGHnQqNPZbsZoC86FaMgIRkaJ05ioXQv0D90W7dfctrfcXvqHlpW2Sb/J76X33N7v55zv+d3TElLs8nS1v0yKWVfLyjF/V+skKVa5CIFU7ttY0NO35U5SrAAuqapr4Otsf50ULQAhKLpIuVQAsUgZiiRSriQAiki9RooWgEQitXBPy0+kUOU1M7gqqlJCxLpU79Y7SKEpcJ7A/4EWHqpLC+HSakOLncZXSKEBBKQ6W4b5vU1pIQquSwVkgGh5+SojZWBBd9/tOwoOICBF6n0t3KuM1ML+luFcebtyBnUYRXnGAPmO1Mw5dMxaMem0AbM2BJw2vApAkxlALFJ6uCoq04L4ug5ZPb0v1K7V/J+fY6PTht8l83FlxTNZAYQj9Z4WbqE+JYB/P4ffZPnVZxrcuRaAORvuXWE+AnA2a4AwxJlyLOxuSgkQMA3B32MJBnosA9kCXD6HuxMC2PDpmgBikepnCSMlA8Sqx3IavcPaTAGmRlHhtGFKDTBrRfdNAQivxru1cDfoUgNEVmMsneFjDRDMenTtqfrFwsjERumzuW/QPGvDF04rfE4rZpLmP1uARJFSA/hNQ6FA9+CKWTPrsUekGOQMo5zhN86Ag7olGIkDBmJfNBLHiIHYV38KzhZgOVKRLpUA4C31s/oF9EmG1bWvei4MoCwDcUwYiP2wvCo5A5DKd7IW/m7ztCL/E3jIXKl8zlGKbZzBpzZ/hP67uEUzfkMNIFerZtx1lN7YlVOAcJ1ua/T3WN4OmIa81w682B438zpoOcO0bFpkuMQFHDRTbG8hY08lMy/V3g0z0j3TzzdiQ04BvF8RnfR9S48eb1I/gzN8HJt1Co9Zh1b5mpE4fkgF8ES9NwJNcXJdANR6shlVnOKT6Mz/10/x8LL573emMr+17Mc/FHELcQGdaQFcL6WuTAEigoYLsHCKuD/RDMR+KhVAM3Ec4RSfKSD+5hTPWjajZp0BVmo7+VYbbZsJzRuIw9dGLtxqptCJDH/FbX6KYLgN63F/3gB2VV56M9XsG4n9HXmsqMcjIsW1BC34Yt4AHq/zXN5dOY0W4ggljs9Yh3L8QDM2iQyHOcOUDGDW4+m8AIgMD8gmDjVcx4PaK75t5ReVIBeS3w2NFB2R4sMTAqrzAsApvlbHQWQhPFZ3FR23TM5L74bVfte6AxwTsCPcEpdfav9wBmccDMXxggSIHie+VHWUYbOA++KgKJZEPdqzArjZLzIuwCgyDIgUjhVdhCIoHafD4xhOqa6N95I0P+hzDcAZRhKdPhU1Io+VNqTIMBu/LzCQVwCpzSUyLh0pOMN3/Y1oU63WPjlK0TE/izXYnDeAcO+muC4bkmIUjlMT9Mn8cIqPRMV+kCKYNwBJIsUbogDxuXqwlEai4hQn4lYs3wCZipcAzpdWYH0jVFJJJZGi1v86J6M6MUxmgQAAAABJRU5ErkJggg==" alt="leave-house"></button>
                     </form>
                 </div>
             </div>
-            <!-- Logo a la derecha -->
             <img src="../imagenes/logo.ico" alt="Logo de la empresa"  style="width: 90px; height: px; object-fit: cover; border-radius: 10px;">
-             
         </aside>
     </header>
 <br><br>
-    <!-- Bolas de estadísticas -->
     <h2 style="text-align: center;">Totales de proyecto actuales</h2>
     <div class="proyectos-container">
         <?php foreach ($proyectosPorTipo as $tipo => $cantidad): ?>
@@ -169,10 +164,8 @@ $resultFiles = $stmtFiles->get_result();
         </div>
     </div>
 <br><br>
-    <!-- Título -->
     <h2>TIPO DE FILTRADO</h2>
 
-    <!-- Toggle Switch -->
     <div class="toggle-container">
         <label class="switch">
             <input type="checkbox" id="toggleFiltro" onchange="cambiarFiltro()">
@@ -181,11 +174,8 @@ $resultFiles = $stmtFiles->get_result();
         <span id="modoFiltro">Fecha</span>
     </div>
 
-    <!-- Contenedor para ambos formularios -->
     <div id="contenedorFiltros">
-        <!-- Este se mostrará por defecto -->
         <div id="form-fecha" class="filtro-activo">
-            <!-- Aquí insertas tu formulario por fecha -->
             <form method="get" action="upload.php" class="form-fechas">
                 <h2>POR RANGO DE FECHA</h2>
                 <div class="form-group">
@@ -202,9 +192,7 @@ $resultFiles = $stmtFiles->get_result();
             </form>
         </div>
 
-        <!-- Este se oculta al inicio -->
         <div id="form-nombre" class="filtro-oculto">
-            <!-- Aquí insertas tu formulario por nombre -->
             <div class="busqueda-contenedor">
                 <label for="buscarNombre">Buscar por nombre del archivo:</label><br>
                 <input type="text" id="buscarNombre" placeholder="Escriba parte del nombre...">
@@ -213,58 +201,56 @@ $resultFiles = $stmtFiles->get_result();
     </div>
 
     <h2>RESULTADOS DE BUSQUEDA</h2>
-    <!-- Campo de búsqueda por nombre -->
     <div class="tabla-contenedor">
         <table class="styled-table">
-    <thead>
-        <tr>
-            <th>Nombre del Archivo</th>
-            <th>Ver archivo</th>
-            <th>Fecha de Subida</th>
-            <th>Eliminar</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        if ($resultFiles->num_rows > 0) {
-            while ($row = $resultFiles->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
+            <thead>
+                <tr>
+                    <th>Nombre del Archivo</th>
+                    <th>Ver archivo</th>
+                    <th>Fecha de Subida</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if ($resultFiles->num_rows > 0) {
+                    while ($row = $resultFiles->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
 
-                echo "<td><a href='view.php?file=" . urlencode($row['ruta']) . "' target='_blank'>
-                        <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACWUlEQVR4nO3XT0/TcBzH8e/BR2B8Ah68bFETIx7gAMYDLAYOoge5iJpowhPwZGI0GqIRjWYKog7mjaPePEgCdBv7l6UMFFAGbVecY9nmhAVm+zFoZMmv/R3EstKk3+R17uedJk1K5J577rnnnntW3eobOqkGSVGDhN3IjpKuBmleHaVLZMcpAZKVEYIV5ADdaniAHPj9YMtIAepvaMDKK4LVll/SgDRMBxsSkBkm7HNyZoh83IAvLwj73hBJ3IDFQYITEe/mnxOcgHj3yU9gSe98qJYy2NrabqhqcQnS23bDnm3cgLmnBFZlbRHV6oYtKmsLhj3buAHpJwTW+voPW6VNNnEDxMcEVqXy3VaiySZuQHKAwCoW87ZKmGziBsQfEFj5fM5WMZNN3IDJewSWoki2Ekw2cQPG7xJYsrxiCUVaQFm8iZ+RZuii979pU97XhoDxOwSWFeO/Lk1iM+qzZLj+N0DwxPY8ILssojT3CFrohKXj9T9vYGxnuCZ4nln9gL2mTXnr/9ua4Plg9yD9H0HwXKsHhI759dBxOAmEo2d2AhA+2adHmuAkCJ86XA+ItbTp0RY4hRZtrmG89UA9IN56SI+fhlNosbYvhk+olmj/pic74ARaou2bIQCpznGkuuAMnYPGAJFbD/E8nKH7hjFg5mIf0j1whNkrxs9Zs5f7kO6BI8xe6TUEmL3Uh3QPHKH3iDFg5kIf0j1whN4jZHaV0Lmx2sxVHR+vwx+qiVf00kTXiOl499xzzz33aBf3C8Ako+nZG9acAAAAAElFTkSuQmCC' alt='Ver archivo' width='24' height='24' style='cursor:pointer;'>
-                      </a></td>";
+                        echo "<td><a href='view.php?file=" . urlencode($row['ruta']) . "' target='_blank'>
+                                <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACWUlEQVR4nO3XT0/TcBzH8e/BR2B8Ah68bFETIx7gAMYDLAYOoge5iJpowhPwZGI0GqIRjWYKog7mjaPePEgCdBv7l6UMFFAGbVecY9nmhAVm+zFoZMmv/R3EstKk3+R17uedJk1K5J577rnnnntW3eobOqkGSVGDhN3IjpKuBmleHaVLZMcpAZKVEYIV5ADdaniAHPj9YMtIAepvaMDKK4LVll/SgDRMBxsSkBkm7HNyZoh83IAvLwj73hBJ3IDFQYITEe/mnxOcgHj3yU9gSe98qJYy2NrabqhqcQnS23bDnm3cgLmnBFZlbRHV6oYtKmsLhj3buAHpJwTW+voPW6VNNnEDxMcEVqXy3VaiySZuQHKAwCoW87ZKmGziBsQfEFj5fM5WMZNN3IDJewSWFeO/Lk1iM+qzZLj+N0DwxPY8ILssojT3CFrohKXj9T9vYGxnuCZ4nln9gL2mTXnr/9ua4Plg9yD9H0HwXKsHhI759dBxOAmEo2d2AhA+2adHmuAkCJ86XA+ItbTp0RY4hRZtrmG89UA9IN56SI+fhlNosbYvhk+olmj/pic74ARaou2bIQCpznGkuuAMnYPGAJFbD/E8nKH7hjFg5mIf0j1whNkrxs9Zs5f7kO6BI8xe6TUEmL3Uh3QPHKH3iDFg5kIf0j1whN4jZHaV0Lmx2sxVHR+vwx+qiVf00kTXiOl499xzzz33aBf3C8Ako+nZG9acAAAAAElFTkSuQmCC' alt='Ver archivo' width='24' height='24' style='cursor:pointer;'>
+                              </a></td>";
 
-                echo "<td>" . htmlspecialchars($row['fecha_subida']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['fecha_subida']) . "</td>";
 
-                echo "<td>
-                        <form method='post' action='eliminar.php' 
-                              onsubmit=\"return confirm('¿Eliminar ESTE archivo y SUS registros exactamente relacionados?');\">
-                            <input type='hidden' name='id' value='" . htmlspecialchars($row['id'], ENT_QUOTES) . "'>
-                            <button type='submit' style='
-                                background-color: #dc3545;
-                                color: white;
-                                border: none;
-                                padding: 6px 12px;
-                                border-radius: 4px;
-                                cursor: pointer;
-                                white-space: nowrap;
-                            '>Eliminar</button>
-                        </form>
-                      </td>";
+                        echo "<td>
+                                <form method='post' action='eliminar.php' 
+                                      onsubmit=\"return confirm('¿Eliminar ESTE archivo y SUS registros exactamente relacionados?');\">
+                                    <input type='hidden' name='id' value='" . htmlspecialchars($row['id'], ENT_QUOTES) . "'>
+                                    <button type='submit' style='
+                                        background-color: #dc3545;
+                                        color: white;
+                                        border: none;
+                                        padding: 6px 12px;
+                                        border-radius: 4px;
+                                        cursor: pointer;
+                                        white-space: nowrap;
+                                    '>Eliminar</button>
+                                </form>
+                              </td>";
 
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='4'>No se encontraron archivos para el rango de fechas seleccionado.</td></tr>";
-        }
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='4'>No se encontraron archivos para el rango de fechas seleccionado.</td></tr>";
+                }
 
-        $stmtFiles->close();
-        $GLOBALS['conn']->close();
-        ?>
-    </tbody>
-</table>
-
+                $stmtFiles->close();
+                $GLOBALS['conn']->close();
+                ?>
+            </tbody>
+        </table>
     </div>
 
     <script>
@@ -278,7 +264,7 @@ $resultFiles = $stmtFiles->get_result();
         function limpiarFiltros() {
             document.getElementById('fecha_inicio').value = '';
             document.getElementById('fecha_fin').value = '';
-            window.location.href = 'upload.php'; // Recargar sin parámetros
+            window.location.href = 'upload.php';
         }
     </script>
 
@@ -289,7 +275,6 @@ $resultFiles = $stmtFiles->get_result();
 
             filas.forEach(fila => {
                 const nombreArchivo = fila.querySelector('td')?.textContent.toLowerCase() || "";
-                // Mostrar fila solo si contiene el texto buscado
                 fila.style.display = nombreArchivo.includes(filtro) ? '' : 'none';
             });
         });
@@ -307,10 +292,9 @@ $resultFiles = $stmtFiles->get_result();
                 formFecha.classList.replace("filtro-activo", "filtro-oculto");
                 formNombre.classList.replace("filtro-oculto", "filtro-activo");
 
-                // Si hay parámetros de fecha en la URL, recargar sin ellos
                 const url = new URL(window.location.href);
                 if (url.searchParams.has('fecha_inicio') || url.searchParams.has('fecha_fin')) {
-                    window.location.href = 'upload.php';  // o el nombre de tu archivo principal
+                    window.location.href = 'upload.php';
                 }
 
             } else {

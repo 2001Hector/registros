@@ -17,12 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['nombre_usuario'] = $usuario['Nombre'];
 
         // Redirigir dependiendo del id_registrador
-        if ($usuario['id_registrador'] == 3) {  // Si el id_registrador es 1
-            header("Location: php/upload.php"); // Ventana administrativa
+        if ($usuario['id_registrador'] == 3) {
+            header("Location: php/upload.php");
+            exit();
         } else {
-            header("Location: php/registro.php"); // Ventana de usuario regular
+            header("Location: php/registro.php");
+            exit();
         }
-        exit();
     } else {
         $error = "Correo electrónico o contraseña incorrectos";
     }
@@ -38,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/styless.css">
     <title>Iniciar Sesión</title>
     <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
-    
 </head>
 
 <body>
@@ -61,13 +61,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
         <p>¿No tienes una cuenta? <a href="signup.php">Regístrate aquí</a></p>
         
-        
         <div style="background-color: #f0f4ff; border-left: 4px solid #3b82f6; padding: 10px 15px; margin-top: 15px; font-size: 0.9em; color: #1e3a8a;">
- <i> <strong>Importante:Si eres estudiantes deseas ver tus proyecto en que se encuentra participes</strong></i>
-  <p><a href="vistaEstudiante.php">Ver</a></p>
-</div>
+            <i><strong>Importante: Si eres estudiante y deseas ver tus proyectos en los que participas</strong></i>
+            <p><a href="vistaEstudiante.php">Ver</a></p>
+        </div>
     </div>
-    
 </body>
 </html>
-
