@@ -1,31 +1,4 @@
-<?php
-require_once 'conexionB.php';
 
-// Obtener los filtros de fecha
-$fechaInicio = isset($_GET['fecha_inicio']) ? $_GET['fecha_inicio'] : null;
-$fechaFin = isset($_GET['fecha_fin']) ? $_GET['fecha_fin'] : null;
-
-// Validar que si se especifica fecha fin, también se especifique fecha inicio
-if ($fechaFin && !$fechaInicio) {
-    $fechaInicio = date('Y-m-d'); // Si solo hay fecha fin, establecer fecha inicio como hoy
-}
-
-// Consulta para obtener la cantidad de proyectos por tipo
-$query = "SELECT r.id_tipo as nombre_tipo, COUNT(*) as total 
-          FROM registro r
-          GROUP BY r.id_tipo";
-$result = $conn->query($query);
-
-$proyectosPorTipo = [];
-$totalProyectos = 0;
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $proyectosPorTipo[$row['nombre_tipo']] = $row['total'];
-        $totalProyectos += $row['total'];
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
 
