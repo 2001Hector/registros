@@ -5,5 +5,5 @@
 
   session_destroy();
 
-  header('Location: /php-index');
+  header('Location: /php-index.php');
 ?>
