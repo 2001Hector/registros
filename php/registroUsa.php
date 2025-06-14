@@ -109,7 +109,7 @@ $conn->close();
     <link rel="icon" href="../imagenes/favicon.ico" type="image/x-icon">
 </head>
 <header>
-    <form action="../login.php" method="get">
+    <form action="../index.php" method="get">
         <button type="submit">Volver al login</button>
     </form>
 </header>

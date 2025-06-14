@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'database.php';
+require_once 'php/conexionB.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];

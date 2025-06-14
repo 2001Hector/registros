@@ -1,26 +1,16 @@
 <?php
+require_once 'conexionB.php';
 session_start(); // Iniciar la sesión
 
 // Comprobar si el usuario está autenticado
 if (!isset($_SESSION['id_registrador'])) {
-    header("Location: login.php"); // Redirigir a login si no está autenticado
+    header("Location: index.php"); // Redirigir a login si no está autenticado
     exit;
 }
 
 $usuarioId = $_SESSION['id_registrador']; // Obtener el ID del usuario
 
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$dbname = 'archivos_db';
 
-// Crear conexión
-$conn = new mysqli($host, $user, $password, $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
 
 // Obtener los filtros de fecha
 $fechaInicio = isset($_GET['fecha_inicio']) ? $_GET['fecha_inicio'] : null;
