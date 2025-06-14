@@ -3,26 +3,21 @@ body {
     font-family: Arial, sans-serif;
     background-image: url('../imagenes/Imagen1.jpg');
     background-size: cover;
-    background-position: relative; 
-    background-repeat: no-repeat; 
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     flex-direction: column;
 }
 
 .contenedor-formulario {
-    position: absolute;
-    top: 28%; /* o el valor que prefieras */
-    left: 30%;
-    transform: translate(-50%, -30%);
-    image-rendering:  center;
-    width: 95%;            /* Aumenta el ancho en pantallas grandes */
-    max-width: 450px;      /* Puedes subirlo de 350px a 450px o más */
-    
+    width: 95%;
+    max-width: 450px;
+    margin: 40px auto;
     padding: 30px;
     border-radius: 15px;
     box-sizing: border-box;
@@ -36,17 +31,15 @@ body {
     animation: fadeIn 0.8s ease-out forwards;
 }
 
-
-
 /* Animación de aparición suave */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translate(-50%, -40%);
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
-        transform: translate(-50%, -30%);
+        transform: translateY(0);
     }
 }
 
@@ -84,23 +77,30 @@ form div:nth-child(3) {
     }
 }
 
-
-/* En pantallas más pequeñas reducimos max-width y ancho para que se ajuste */
+/* ==== MEDIA QUERIES ==== */
 @media (max-width: 768px) {
     .contenedor-formulario {
-        max-width: 300px;
-        width: 80%;
+        max-width: 90%;
+        padding: 25px;
     }
 }
 
 @media (max-width: 480px) {
     .contenedor-formulario {
-        max-width: 250px;
-        width: 95%;
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    form input,
+    form label {
+        font-size: 16px;
     }
 }
-
-
 
 /* ==== ENCABEZADO ==== */
 header {
@@ -147,10 +147,6 @@ form {
     flex-direction: column;
     gap: 15px;
     border: 3px solid orange;
-}
-
-form {
-    width: 100%;
     box-sizing: border-box;
 }
 
@@ -160,7 +156,6 @@ form input[type="submit"] {
     width: 100%;
     box-sizing: border-box;
 }
-
 
 form label {
     font-weight: bold;
@@ -297,4 +292,3 @@ h1, h2 {
     margin: 20px;
     text-align: center;
 }
-
