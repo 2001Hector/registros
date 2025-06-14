@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'conexionB.php';
+require_once 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST['correo'];
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         exit();
     } else {
-        $error = "CorreoS electrónico o contraseña incorrectos";
+        $error = "Correo electrónico o contraseña incorrectos";
     }
 }
 ?>
