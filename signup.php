@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
-require_once '/php/conexionB.php';
+require_once 'php/conexionB.php';
 require_once 'envioC.php'; // Incluye tu archivo con PHPMailer
 
 function generateCSRFToken()
