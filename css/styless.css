@@ -1,47 +1,78 @@
 /* ==== ESTILO GENERAL DE LA PÁGINA ==== */
+/* body mejorado (no cambia tu diseño, solo mejora mobile) */
 body {
     font-family: Arial, sans-serif;
     background-image: url('../imagenes/Imagen1.jpg');
     background-size: cover;
-    background-position: relative; 
-    background-repeat: no-repeat; 
+    background-position: center; /* Cambiado de 'relative' a 'center' */
+    background-repeat: no-repeat;
     margin: 0;
-    padding: 0;
+    padding: 20px; /* Añade espacio lateral en móviles */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
+/* contenedor-formulario ajustado */
 .contenedor-formulario {
-    width: 90%;
+    width: 100%;
     max-width: 450px;
-    margin: 0 auto;
     padding: 30px;
     border-radius: 15px;
     box-sizing: border-box;
 
-    /* Fondo borroso tipo glass */
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 
     animation: fadeIn 0.8s ease-out forwards;
 
-    /* Centrado vertical y horizontal usando flexbox */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    /* Quita el position absolute que daña en pantallas pequeñas */
     position: relative;
-    top: auto;
-    left: auto;
     transform: none;
 }
 
+/* Estilos para inputs responsive (si no los tienes aún) */
+.contenedor-formulario input[type="email"],
+.contenedor-formulario input[type="password"],
+.contenedor-formulario input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+}
+
+/* Botón bonito */
+.contenedor-formulario input[type="submit"] {
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contenedor-formulario input[type="submit"]:hover {
+    background-color: #2563eb;
+}
+
+/* Mejora textos y enlaces */
+.contenedor-formulario a {
+    color: #1e40af;
+    text-decoration: none;
+}
+.contenedor-formulario a:hover {
+    text-decoration: underline;
+}
+/* ==== ANIMACIONES ==== */
 
 
 /* Animación de aparición suave */
