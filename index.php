@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contraseña = $_POST['contraseña'];
 
     // Consulta para obtener el usuario
-    $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE correo = :correo");
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE correo = :correo");
     $stmt->execute(['correo' => $correo]);
     $usuario = $stmt->fetch();
 
